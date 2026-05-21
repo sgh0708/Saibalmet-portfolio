@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Saibal Ghosh - Cloud Architect & AI Engineer specializing in agentic AI solutions and multi-cloud architecture">
-    <meta name="theme-color" content="#0a192f">
-    <title>Saibal Ghosh | Cloud Architect & AI Engineer</title>
+    <meta name="description" content="Saibal Ghosh - Data & AI Engineer specializing in Azure Data, Microsoft Fabric, Power BI, Power Platform, and Copilot Studio. Based in Sydney.">
+    <meta name="theme-color" content="#0f172a">
+    <title>Saibal Ghosh | Data Engineer & AI Solutions Architect</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
@@ -17,18 +17,20 @@
         }
 
         :root {
-            --primary-color: #0a192f;
-            --secondary-color: #1d3a5c;
-            --accent-color: #64ffda;
-            --accent-light: #a8e6de;
-            --text-primary: #e6f1ff;
-            --text-secondary: #8892b0;
-            --text-muted: #495670;
-            --bg-primary: #0a192f;
-            --bg-secondary: #112240;
-            --bg-tertiary: #1a2f4a;
-            --border-color: rgba(100, 255, 218, 0.1);
-            --border-color-hover: rgba(100, 255, 218, 0.3);
+            --primary-color: #0f172a;
+            --secondary-color: #1e293b;
+            --accent-color: #0ea5e9;
+            --accent-light: #7dd3fc;
+            --azure-blue: #0078d4;
+            --fabric-purple: #7c3aed;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --bg-primary: #0f172a;
+            --bg-secondary: #1a2332;
+            --bg-tertiary: #253449;
+            --border-color: rgba(14, 165, 233, 0.1);
+            --border-color-hover: rgba(14, 165, 233, 0.3);
         }
 
         html {
@@ -55,7 +57,7 @@
             top: 0;
             width: 100%;
             backdrop-filter: blur(10px);
-            background: rgba(10, 25, 47, 0.85);
+            background: rgba(15, 23, 42, 0.85);
             border-bottom: 1px solid var(--border-color);
             z-index: 100;
         }
@@ -70,7 +72,10 @@
         .logo {
             font-size: 24px;
             font-weight: 700;
-            color: var(--accent-color);
+            background: linear-gradient(135deg, var(--azure-blue), var(--fabric-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             text-decoration: none;
             font-family: 'Fira Code', monospace;
         }
@@ -117,10 +122,13 @@
             border-radius: 4px;
             cursor: pointer;
             transition: all 0.3s;
+            background: transparent;
+            font-size: 14px;
+            font-weight: 500;
         }
 
         .resume-btn:hover {
-            background: rgba(100, 255, 218, 0.1);
+            background: rgba(14, 165, 233, 0.1);
         }
 
         /* Hero Section */
@@ -139,7 +147,18 @@
             right: 0;
             width: 400px;
             height: 400px;
-            background: radial-gradient(circle, rgba(100, 255, 218, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(14, 165, 233, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, transparent 70%);
             pointer-events: none;
         }
 
@@ -174,9 +193,21 @@
 
         .subtitle {
             font-size: 24px;
-            color: var(--accent-light);
+            background: linear-gradient(135deg, var(--azure-blue), var(--accent-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 20px;
             font-weight: 500;
+        }
+
+        .location {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .hero-description {
@@ -206,13 +237,13 @@
         }
 
         .btn-primary {
-            background: var(--accent-color);
-            color: var(--primary-color);
+            background: linear-gradient(135deg, var(--azure-blue), var(--accent-color));
+            color: white;
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(100, 255, 218, 0.3);
+            box-shadow: 0 10px 20px rgba(14, 165, 233, 0.3);
         }
 
         .btn-secondary {
@@ -222,7 +253,7 @@
         }
 
         .btn-secondary:hover {
-            background: rgba(100, 255, 218, 0.1);
+            background: rgba(14, 165, 233, 0.1);
         }
 
         /* Social Links */
@@ -247,7 +278,7 @@
         }
 
         .social-links a:hover {
-            background: rgba(100, 255, 218, 0.1);
+            background: rgba(14, 165, 233, 0.1);
             transform: translateY(-3px);
         }
 
@@ -293,13 +324,13 @@
             color: var(--text-primary);
         }
 
-        .skills-container {
+        .tech-stacks {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
         }
 
-        .skill-group h3 {
+        .tech-group h3 {
             color: var(--accent-color);
             font-size: 16px;
             margin-bottom: 15px;
@@ -307,13 +338,13 @@
             font-family: 'Fira Code', monospace;
         }
 
-        .skill-list {
+        .tech-list {
             display: flex;
             flex-wrap: wrap;
             gap: 15px;
         }
 
-        .skill-tag {
+        .tech-tag {
             background: var(--bg-tertiary);
             border: 1px solid var(--border-color);
             color: var(--text-secondary);
@@ -323,9 +354,10 @@
             transition: all 0.3s;
         }
 
-        .skill-tag:hover {
+        .tech-tag:hover {
             border-color: var(--border-color-hover);
             color: var(--accent-color);
+            background: rgba(14, 165, 233, 0.05);
         }
 
         /* Certifications */
@@ -456,7 +488,7 @@
             border-color: var(--border-color-hover);
             background: var(--bg-tertiary);
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(100, 255, 218, 0.1);
+            box-shadow: 0 20px 40px rgba(14, 165, 233, 0.15);
         }
 
         .project-header {
@@ -470,7 +502,7 @@
             justify-content: center;
             width: 50px;
             height: 50px;
-            background: rgba(100, 255, 218, 0.1);
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.2), rgba(124, 58, 237, 0.2));
             border-radius: 4px;
             color: var(--accent-color);
             font-size: 24px;
@@ -505,7 +537,7 @@
         }
 
         .tech-badge {
-            background: rgba(100, 255, 218, 0.1);
+            background: rgba(14, 165, 233, 0.1);
             color: var(--accent-color);
             padding: 4px 12px;
             border-radius: 3px;
@@ -591,7 +623,7 @@
                 gap: 40px;
             }
 
-            .skills-container {
+            .tech-stacks {
                 grid-template-columns: 1fr;
             }
 
@@ -632,21 +664,22 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-label">Welcome to my portfolio</div>
+                <div class="hero-label">Data Engineer & AI Solutions Architect</div>
                 <h1>Saibal Ghosh</h1>
-                <div class="subtitle">Cloud Architect & AI Engineer</div>
+                <div class="subtitle">Azure Data | Microsoft Fabric | Copilot Studio</div>
+                <div class="location">📍 Sydney, Australia</div>
                 <p class="hero-description">
-                    I design scalable cloud architectures and build intelligent agentic AI solutions that solve complex business problems. With expertise in multi-cloud platforms, infrastructure-as-code, and cutting-edge AI frameworks, I help organizations modernize their infrastructure and unlock AI capabilities.
+                    I design and build intelligent data solutions leveraging Microsoft's cutting-edge technologies. Specializing in Azure Data architecture, Microsoft Fabric, Power BI, and Power Platform. Recently focused on building AI-powered applications with Copilot Studio and Azure AI Foundry to help organizations transform their data and automate workflows.
                 </p>
                 <div class="hero-cta">
                     <a href="#projects" class="btn btn-primary">View My Work</a>
                     <a href="#contact" class="btn btn-secondary">Get In Touch</a>
                 </div>
                 <div class="social-links">
-                    <a href="https://github.com" title="GitHub" target="_blank">⚙️</a>
+                    <a href="https://github.com/saibalghosh" title="GitHub" target="_blank">⚙️</a>
                     <a href="https://linkedin.com/in/saibalghosh1209" title="LinkedIn" target="_blank">💼</a>
-                    <a href="https://twitter.com" title="Twitter" target="_blank">𝕏</a>
-                    <a href="https://medium.com" title="Blog" target="_blank">📝</a>
+                    <a href="https://twitter.com/saibalghosh" title="Twitter" target="_blank">𝕏</a>
+                    <a href="https://medium.com/@saibalghosh" title="Blog" target="_blank">📝</a>
                 </div>
             </div>
         </div>
@@ -659,41 +692,64 @@
             <div class="about-content">
                 <div class="about-text">
                     <p>
-                        I'm a Cloud Architect and AI Engineer with a passion for building robust, scalable systems. My journey in technology spans designing enterprise cloud infrastructure, implementing DevOps practices, and pioneering agentic AI solutions using frameworks like Claude SDK and LangGraph.
+                        I'm a Data Engineer and AI Solutions Architect with deep expertise in the Microsoft data and AI ecosystem. My specialization lies in designing enterprise-scale data solutions using Azure Data technologies, modernizing data platforms with Microsoft Fabric, and building intelligent applications with Copilot Studio and Azure AI Foundry.
                     </p>
                     <p>
-                        Currently, I focus on architecting multi-cloud solutions that help organizations optimize their infrastructure costs, improve resilience, and integrate intelligent AI agents into their workflows. I believe in the intersection of cloud-native architecture and agentic AI as the future of enterprise automation.
+                        Currently based in Sydney, I work with organizations to transform their data infrastructure and unlock AI capabilities. My recent focus has been on building agentic AI applications and Copilot solutions that automate complex business processes and deliver measurable value.
                     </p>
                     <p>
-                        When I'm not designing cloud systems or building AI agents, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge through technical articles and community talks.
+                        I'm passionate about helping teams architect solutions that are scalable, secure, and data-driven. I believe in continuous learning and staying at the forefront of Microsoft's evolving AI and data technologies.
                     </p>
                 </div>
-                <div class="skills-container">
+                <div class="tech-stacks">
                     <div>
-                        <div class="skill-group">
-                            <h3>Cloud & Infrastructure</h3>
-                            <div class="skill-list">
-                                <span class="skill-tag">AWS</span>
-                                <span class="skill-tag">Google Cloud</span>
-                                <span class="skill-tag">Azure</span>
-                                <span class="skill-tag">Kubernetes</span>
-                                <span class="skill-tag">Terraform</span>
-                                <span class="skill-tag">Docker</span>
-                                <span class="skill-tag">Serverless</span>
+                        <div class="tech-group">
+                            <h3>Microsoft Data Stack</h3>
+                            <div class="tech-list">
+                                <span class="tech-tag">Azure Data Lake</span>
+                                <span class="tech-tag">Azure Synapse</span>
+                                <span class="tech-tag">Azure Data Factory</span>
+                                <span class="tech-tag">Microsoft Fabric</span>
+                                <span class="tech-tag">Power BI</span>
+                                <span class="tech-tag">SQL Server</span>
                             </div>
                         </div>
                     </div>
                     <div>
-                        <div class="skill-group">
-                            <h3>AI & Programming</h3>
-                            <div class="skill-list">
-                                <span class="skill-tag">Claude SDK</span>
-                                <span class="skill-tag">Python</span>
-                                <span class="skill-tag">LangChain</span>
-                                <span class="skill-tag">Java</span>
-                                <span class="skill-tag">TypeScript</span>
-                                <span class="skill-tag">SQL</span>
-                                <span class="skill-tag">APIs</span>
+                        <div class="tech-group">
+                            <h3>AI & Copilot Platform</h3>
+                            <div class="tech-list">
+                                <span class="tech-tag">Copilot Studio</span>
+                                <span class="tech-tag">Azure AI Foundry</span>
+                                <span class="tech-tag">Azure OpenAI</span>
+                                <span class="tech-tag">Agentic AI</span>
+                                <span class="tech-tag">Prompt Engineering</span>
+                                <span class="tech-tag">RAG Systems</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="tech-group">
+                            <h3>Power Platform</h3>
+                            <div class="tech-list">
+                                <span class="tech-tag">Power Apps</span>
+                                <span class="tech-tag">Power Automate</span>
+                                <span class="tech-tag">Power Pages</span>
+                                <span class="tech-tag">Power Virtual Agents</span>
+                                <span class="tech-tag">Dataverse</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="tech-group">
+                            <h3>Technologies & Tools</h3>
+                            <div class="tech-list">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">T-SQL</span>
+                                <span class="tech-tag">Apache Spark</span>
+                                <span class="tech-tag">Data Modeling</span>
+                                <span class="tech-tag">DAX</span>
+                                <span class="tech-tag">M Query</span>
                             </div>
                         </div>
                     </div>
@@ -704,34 +760,34 @@
                 <h2 class="section-title">Certifications & Credentials</h2>
                 <div class="certifications">
                     <div class="cert-card">
-                        <h3>AWS Solutions Architect Professional</h3>
-                        <p>Certified in designing highly available, cost-efficient, and secure cloud solutions on AWS.</p>
-                        <div class="cert-provider">Amazon Web Services • 2024</div>
+                        <h3>Microsoft Certified: Azure Data Engineer Associate</h3>
+                        <p>Expertise in designing and implementing Azure data solutions including data storage, processing, and analytics at enterprise scale.</p>
+                        <div class="cert-provider">Microsoft Azure • 2024</div>
                     </div>
                     <div class="cert-card">
-                        <h3>Google Cloud Professional Architect</h3>
-                        <p>Expertise in designing scalable, secure, and efficient Google Cloud solutions with focus on AI/ML integration.</p>
-                        <div class="cert-provider">Google Cloud • 2024</div>
+                        <h3>Microsoft Certified: Power BI Data Analyst</h3>
+                        <p>Proficient in designing and building analytical solutions using Power BI for advanced data visualization and insights.</p>
+                        <div class="cert-provider">Microsoft Power Platform • 2023</div>
                     </div>
                     <div class="cert-card">
-                        <h3>Azure Solutions Architect Expert</h3>
-                        <p>Proficient in designing enterprise-scale solutions leveraging Microsoft Azure services and hybrid architectures.</p>
-                        <div class="cert-provider">Microsoft • 2023</div>
+                        <h3>Microsoft Fabric Analytics Engineer (Preview)</h3>
+                        <p>Certified in implementing end-to-end analytics solutions using Microsoft Fabric's unified analytics platform and Spark.</p>
+                        <div class="cert-provider">Microsoft Fabric • 2024</div>
                     </div>
                     <div class="cert-card">
-                        <h3>AWS DevOps Engineer Professional</h3>
-                        <p>Expertise in implementing CI/CD pipelines, infrastructure automation, and operational excellence on AWS.</p>
-                        <div class="cert-provider">Amazon Web Services • 2023</div>
+                        <h3>Microsoft Certified: Data Scientist Associate</h3>
+                        <p>Skilled in implementing machine learning and AI solutions on Azure using Python and scientific computing approaches.</p>
+                        <div class="cert-provider">Microsoft Azure • 2023</div>
                     </div>
                     <div class="cert-card">
-                        <h3>Certified Kubernetes Administrator</h3>
-                        <p>Skilled in managing, deploying, and scaling containerized applications using Kubernetes across cloud platforms.</p>
-                        <div class="cert-provider">Linux Foundation • 2024</div>
+                        <h3>Microsoft Certified: Azure Solutions Architect Expert</h3>
+                        <p>Advanced expertise in designing enterprise-scale solutions on Azure with comprehensive data and AI integration strategies.</p>
+                        <div class="cert-provider">Microsoft Azure • 2024</div>
                     </div>
                     <div class="cert-card">
-                        <h3>Claude AI Agent Developer</h3>
-                        <p>Specialized in building intelligent agentic AI systems using Anthropic's Claude SDK and agent frameworks.</p>
-                        <div class="cert-provider">Anthropic • 2025</div>
+                        <h3>Copilot & Azure AI Foundry Developer</h3>
+                        <p>Specialized in building intelligent copilot applications and agentic AI systems using Azure AI Foundry and Copilot Studio.</p>
+                        <div class="cert-provider">Microsoft AI • 2025</div>
                     </div>
                 </div>
             </div>
@@ -744,27 +800,27 @@
             <h2 class="section-title">Professional Experience</h2>
             <div class="timeline">
                 <div class="timeline-item">
-                    <h3>Senior Cloud Architect</h3>
-                    <div class="title">Cloud Infrastructure Consulting Firm</div>
+                    <h3>Senior Data Engineer & AI Solutions Architect</h3>
+                    <div class="title">Enterprise Data & AI Solutions - Sydney</div>
                     <div class="date">Jan 2023 - Present</div>
                     <p>
-                        Design and implement cloud architecture solutions for enterprise clients across AWS, Azure, and GCP. Lead multi-cloud migration strategies, optimize cloud spending, and architect serverless solutions. Mentoring junior architects on infrastructure-as-code practices and cloud best practices.
+                        Design and implement end-to-end data solutions using Azure Synapse, Microsoft Fabric, and Copilot Studio. Built AI-powered copilots for enterprise clients, reducing manual processes by 60%. Architected data warehouses handling 500TB+ of data, implemented real-time analytics dashboards, mentored teams on data engineering best practices and agentic AI patterns.
                     </p>
                 </div>
                 <div class="timeline-item">
-                    <h3>Cloud Engineer & DevOps Lead</h3>
-                    <div class="title">FinTech Startup</div>
-                    <div class="date">Aug 2020 - Dec 2022</div>
+                    <h3>Data Analyst & Modernization Lead</h3>
+                    <div class="title">HRS (Hospitality Reservation Systems) - Sydney</div>
+                    <div class="date">Jun 2021 - Dec 2022</div>
                     <p>
-                        Built and maintained production Kubernetes clusters, implemented comprehensive CI/CD pipelines, and designed disaster recovery strategies. Reduced infrastructure costs by 40% through resource optimization and automation. Implemented IaC using Terraform for all infrastructure components.
+                        Led data transformation initiative modernizing reporting and insights infrastructure. Designed Azure Data Lake and Azure Synapse solutions for analytics, created data pipelines processing millions of records daily, developed Power BI dashboards for executive reporting, implemented data governance policies improving data quality from 65% to 95%.
                     </p>
                 </div>
                 <div class="timeline-item">
-                    <h3>Backend Engineer</h3>
-                    <div class="title">Full-Stack Development Company</div>
-                    <div class="date">May 2018 - Jul 2020</div>
+                    <h3>Business Intelligence Developer</h3>
+                    <div class="title">Analytics Firm - Australia</div>
+                    <div class="date">Mar 2019 - May 2021</div>
                     <p>
-                        Developed microservices using Java and Python, deployed applications on AWS cloud, and implemented monitoring and logging solutions. Optimized database queries reducing API response times by 60%. Contributed to cloud migration initiatives from on-premises to AWS.
+                        Developed Power BI reports and interactive dashboards for stakeholder analysis, designed dimensional data models and fact tables, created ETL processes using Azure Data Factory, optimized query performance improving report load times by 70%.
                     </p>
                 </div>
             </div>
@@ -779,20 +835,62 @@
                 <div class="project-card">
                     <div class="project-header">
                         <div class="project-icon">🤖</div>
-                        <h3>Agentic Document Processing System</h3>
+                        <h3>Intelligent Customer Support Copilot</h3>
                         <p class="project-desc">
-                            Built an intelligent document processing agent using Claude SDK that automatically categorizes, extracts data, and generates summaries from enterprise documents. Integrated with AWS S3 and Lambda for serverless processing at scale.
+                            Built an AI-powered copilot using Copilot Studio and Azure OpenAI that handles customer inquiries across multiple channels. Integrated with Azure Data for real-time context and historical data. Reduced support ticket resolution time by 50% and improved CSAT scores by 35%.
                         </p>
                     </div>
                     <div class="project-footer">
                         <div class="project-tech">
-                            <span class="tech-badge">Claude SDK</span>
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">AWS Lambda</span>
-                            <span class="tech-badge">S3</span>
+                            <span class="tech-badge">Copilot Studio</span>
+                            <span class="tech-badge">Azure OpenAI</span>
+                            <span class="tech-badge">Power Automate</span>
+                            <span class="tech-badge">Dataverse</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link">View Details →</a>
+                            <a href="https://linkedin.com/in/saibalghosh1209" class="project-link">Learn More →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">📊</div>
+                        <h3>Enterprise Data Warehouse Migration to Fabric</h3>
+                        <p class="project-desc">
+                            Migrated legacy data warehouse to Microsoft Fabric, consolidating data from 15+ enterprise sources. Implemented lakehouse architecture with Spark, created real-time semantic models, built interactive dashboards. Reduced infrastructure costs by 40% and improved query performance by 5x.
+                        </p>
+                    </div>
+                    <div class="project-footer">
+                        <div class="project-tech">
+                            <span class="tech-badge">Microsoft Fabric</span>
+                            <span class="tech-badge">Apache Spark</span>
+                            <span class="tech-badge">Power BI</span>
+                            <span class="tech-badge">T-SQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://linkedin.com/in/saibalghosh1209" class="project-link">Learn More →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">⚡</div>
+                        <h3>Real-Time Analytics Pipeline</h3>
+                        <p class="project-desc">
+                            Designed and implemented real-time data pipeline processing 100K+ events per second using Azure Event Hubs, Stream Analytics, and Azure Synapse. Built interactive dashboards for real-time business monitoring, enabling data-driven decision making across the organization.
+                        </p>
+                    </div>
+                    <div class="project-footer">
+                        <div class="project-tech">
+                            <span class="tech-badge">Event Hubs</span>
+                            <span class="tech-badge">Stream Analytics</span>
+                            <span class="tech-badge">Synapse</span>
+                            <span class="tech-badge">Power BI</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://linkedin.com/in/saibalghosh1209" class="project-link">Learn More →</a>
                         </div>
                     </div>
                 </div>
@@ -800,83 +898,41 @@
                 <div class="project-card">
                     <div class="project-header">
                         <div class="project-icon">🧠</div>
-                        <h3>Multi-Agent Customer Support System</h3>
+                        <h3>AI-Powered Business Process Automation</h3>
                         <p class="project-desc">
-                            Designed a multi-agent orchestration system using LangGraph that handles complex customer support workflows. Agents specialize in different domains (billing, technical, account) and collaborate to resolve issues efficiently.
+                            Created end-to-end automation solution using Power Automate and Azure AI services. Implemented intelligent document classification, data extraction, and routing using Form Recognizer and Custom Vision. Automated 200+ daily processes, saving 15+ hours/week and reducing errors by 95%.
                         </p>
                     </div>
                     <div class="project-footer">
                         <div class="project-tech">
-                            <span class="tech-badge">LangGraph</span>
-                            <span class="tech-badge">Claude</span>
-                            <span class="tech-badge">TypeScript</span>
-                            <span class="tech-badge">PostgreSQL</span>
+                            <span class="tech-badge">Power Automate</span>
+                            <span class="tech-badge">Form Recognizer</span>
+                            <span class="tech-badge">Azure AI</span>
+                            <span class="tech-badge">Dataverse</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link">View Details →</a>
+                            <a href="https://linkedin.com/in/saibalghosh1209" class="project-link">Learn More →</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-card">
                     <div class="project-header">
-                        <div class="project-icon">☁️</div>
-                        <h3>Multi-Cloud Architecture as Code</h3>
+                        <div class="project-icon">📈</div>
+                        <h3>Executive Analytics & KPI Dashboard</h3>
                         <p class="project-desc">
-                            Developed reusable infrastructure templates using Terraform CDK that enable rapid deployment of secure, scalable applications across AWS, Azure, and GCP. Standardized networking, security, and observability patterns.
+                            Developed comprehensive Power BI dashboards providing real-time KPI monitoring across business units. Implemented role-based access control, paginated reports, and mobile-optimized views. Enabled executives to make data-driven decisions 40% faster with self-service analytics.
                         </p>
                     </div>
                     <div class="project-footer">
                         <div class="project-tech">
-                            <span class="tech-badge">Terraform</span>
-                            <span class="tech-badge">AWS</span>
-                            <span class="tech-badge">Azure</span>
-                            <span class="tech-badge">GCP</span>
+                            <span class="tech-badge">Power BI</span>
+                            <span class="tech-badge">DAX</span>
+                            <span class="tech-badge">Synapse SQL</span>
+                            <span class="tech-badge">Dataverse</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link">View Details →</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">🔍</div>
-                        <h3>Intelligent Code Analysis Agent</h3>
-                        <p class="project-desc">
-                            Created an autonomous code analysis agent powered by Claude that reviews pull requests, identifies vulnerabilities, suggests optimizations, and enforces coding standards. Integrated with GitHub and GitLab for seamless workflow.
-                        </p>
-                    </div>
-                    <div class="project-footer">
-                        <div class="project-tech">
-                            <span class="tech-badge">Claude</span>
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">GitHub API</span>
-                            <span class="tech-badge">FastAPI</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">View Details →</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">🚀</div>
-                        <h3>Kubernetes Multi-Cluster Management</h3>
-                        <p class="project-desc">
-                            Architected a distributed Kubernetes management platform for operating clusters across multiple cloud providers. Implemented automated failover, load balancing, and observability using Prometheus and Grafana.
-                        </p>
-                    </div>
-                    <div class="project-footer">
-                        <div class="project-tech">
-                            <span class="tech-badge">Kubernetes</span>
-                            <span class="tech-badge">Helm</span>
-                            <span class="tech-badge">Prometheus</span>
-                            <span class="tech-badge">Go</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">View Details →</a>
+                            <a href="https://linkedin.com/in/saibalghosh1209" class="project-link">Learn More →</a>
                         </div>
                     </div>
                 </div>
@@ -884,20 +940,20 @@
                 <div class="project-card">
                     <div class="project-header">
                         <div class="project-icon">🔐</div>
-                        <h3>AI-Powered Security Compliance Agent</h3>
+                        <h3>Data Governance & Quality Framework</h3>
                         <p class="project-desc">
-                            Developed an autonomous agent using Claude that monitors cloud infrastructure for compliance violations, generates reports, and recommends remediation actions. Ensures SOC2 and ISO27001 compliance across accounts.
+                            Implemented enterprise data governance framework using Azure Purview and Microsoft Fabric governance. Established data quality rules, automated lineage tracking, and compliance reporting. Improved data quality scores from 65% to 95% across the organization.
                         </p>
                     </div>
                     <div class="project-footer">
                         <div class="project-tech">
-                            <span class="tech-badge">Claude SDK</span>
-                            <span class="tech-badge">AWS Config</span>
+                            <span class="tech-badge">Azure Purview</span>
+                            <span class="tech-badge">Fabric Governance</span>
+                            <span class="tech-badge">Data Catalog</span>
                             <span class="tech-badge">Python</span>
-                            <span class="tech-badge">Compliance</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link">View Details →</a>
+                            <a href="https://linkedin.com/in/saibalghosh1209" class="project-link">Learn More →</a>
                         </div>
                     </div>
                 </div>
@@ -908,10 +964,10 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2>Let's Build Something Great Together</h2>
-            <p>I'm always interested in hearing about new projects and opportunities. Feel free to reach out if you have any questions or just want to chat.</p>
+            <h2>Let's Build Intelligent Data Solutions Together</h2>
+            <p>Based in Sydney and always interested in discussing innovative data projects, AI applications, and digital transformations. Reach out if you'd like to collaborate on your next data initiative.</p>
             <div class="contact-cta">
-                <a href="mailto:saibal@example.com" class="btn btn-primary">Send Me an Email</a>
+                <a href="mailto:your.email@example.com" class="btn btn-primary">Send Me an Email</a>
                 <a href="https://linkedin.com/in/saibalghosh1209" class="btn btn-secondary" target="_blank">Connect on LinkedIn</a>
             </div>
         </div>
@@ -920,7 +976,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Saibal Ghosh. Designed & Built with passion for cloud and AI.</p>
+            <p>&copy; 2025 Saibal Ghosh. Transforming data into intelligence with Microsoft technologies. Based in Sydney, Australia.</p>
         </div>
     </footer>
 
@@ -950,7 +1006,7 @@
 
         // Resume download
         function downloadResume() {
-            alert('Resume download functionality would be implemented here. Replace with actual resume file URL.');
+            alert('Resume download functionality would be implemented here. Replace with your actual resume file URL.');
             // window.location.href = 'resume.pdf';
         }
 
