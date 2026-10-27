@@ -586,9 +586,285 @@
             margin-right: auto;
         }
 
-        .contact-cta {
-            display: inline-flex;
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .contact-form,
+        .contact-side {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 32px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 20px;
+        }
+
+        .form-field {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 22px;
+            border: none;
+        }
+
+        .form-field label,
+        .form-field legend {
+            color: var(--text-primary);
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .form-field input,
+        .form-field textarea {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color-hover);
+            border-radius: 4px;
+            color: var(--text-primary);
+            font: inherit;
+            font-size: 15px;
+            padding: 12px 14px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .form-field textarea {
+            resize: vertical;
+        }
+
+        .form-field input:focus,
+        .form-field textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
+        }
+
+        .role-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .role-option {
+            cursor: pointer;
+            margin: 0 !important;
+        }
+
+        .role-option input {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .role-option span {
+            display: inline-block;
+            padding: 10px 22px;
+            border: 1px solid var(--border-color-hover);
+            border-radius: 999px;
+            color: var(--text-secondary);
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .role-option input:checked + span {
+            background: linear-gradient(135deg, var(--azure-blue), var(--accent-color));
+            border-color: transparent;
+            color: white;
+        }
+
+        .role-option input:focus-visible + span {
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.35);
+        }
+
+        .honeypot {
+            position: absolute;
+            left: -10000px;
+            width: 1px;
+            height: 1px;
+            opacity: 0;
+        }
+
+        .form-submit:disabled {
+            opacity: 0.6;
+            cursor: wait;
+            transform: none;
+        }
+
+        .form-status {
+            margin: 16px 0 0 !important;
+            font-size: 15px !important;
+            min-height: 22px;
+            text-align: left;
+        }
+
+        .form-status.success { color: #4ade80 !important; }
+        .form-status.error { color: #f87171 !important; }
+
+        .contact-side h3 {
+            color: var(--text-primary);
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .contact-link {
+            display: block;
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-color);
+            transition: color 0.2s;
+        }
+
+        .contact-link:hover {
+            color: var(--accent-color);
+        }
+
+        .contact-resume {
+            margin-top: 24px;
+            width: 100%;
+            text-align: center;
+            font-size: 15px;
+        }
+
+        .contact-note {
+            margin: 20px 0 0 !important;
+            font-size: 14px !important;
+            color: var(--text-muted) !important;
+        }
+
+        /* Availability, role highlights and latest work */
+        .availability {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .availability-label {
+            color: var(--text-muted);
+            font-size: 14px;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .availability-chip {
+            border: 1px solid rgba(74, 222, 128, 0.4);
+            background: rgba(74, 222, 128, 0.08);
+            color: #86efac;
+            padding: 5px 14px;
+            border-radius: 999px;
+            font-size: 13px;
+        }
+
+        a.resume-btn {
+            text-decoration: none;
+        }
+
+        .role-highlights {
+            margin: 14px 0 0 18px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .role-highlights li {
+            margin-bottom: 6px;
+        }
+
+        .timeline-item-minor {
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .timeline-item-minor::before {
+            width: 10px;
+            height: 10px;
+            left: -47px;
+            top: 6px;
+            background: var(--text-muted);
+        }
+
+        .minor-line {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .project-year {
+            color: var(--accent-light);
+            font-family: 'Fira Code', monospace;
+            font-size: 12px;
+            margin-bottom: 14px;
+        }
+
+        .project-card-latest {
+            border-color: rgba(14, 165, 233, 0.25);
+        }
+
+        .latest-grid {
+            grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+        }
+
+        .project-card-wide {
+            grid-column: 1 / -1;
+        }
+
+        .arch {
+            display: flex;
+            align-items: stretch;
+            gap: 10px;
+            margin: 10px 0 14px;
+            flex-wrap: wrap;
+        }
+
+        .arch-step {
+            flex: 1 1 150px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color-hover);
+            border-radius: 6px;
+            padding: 12px 14px;
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+
+        .arch-step-core {
+            flex: 2 1 260px;
+            border-color: var(--accent-color);
+            background: rgba(14, 165, 233, 0.08);
+        }
+
+        .arch-label {
+            color: var(--accent-light);
+            font-family: 'Fira Code', monospace;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .arch-sub {
+            color: var(--text-muted);
+            font-size: 12px;
+        }
+
+        .arch-arrow {
+            display: flex;
+            align-items: center;
+            color: var(--accent-color);
+            font-size: 20px;
+        }
+
+        .arch-gov {
+            color: var(--text-muted);
+            font-size: 13px;
         }
 
         /* Footer */
@@ -627,8 +903,33 @@
                 grid-template-columns: 1fr;
             }
 
-            .projects-grid {
+            .projects-grid,
+            .latest-grid,
+            .contact-layout,
+            .form-row {
                 grid-template-columns: 1fr;
+            }
+
+            .hero-cta {
+                flex-wrap: wrap;
+            }
+
+            .arch {
+                flex-direction: column;
+            }
+
+            .arch-step,
+            .arch-step-core {
+                flex: none;
+            }
+
+            .arch-arrow {
+                justify-content: center;
+                transform: rotate(90deg);
+            }
+
+            .contact h2 {
+                font-size: 34px;
             }
 
             .section-title {
@@ -656,7 +957,7 @@
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <button class="resume-btn" onclick="downloadResume()">Resume</button>
+            <a class="resume-btn" href="Saibal_Ghosh_Resume.pdf" download>&#8681; Resume (PDF)</a>
         </div>
     </nav>
 
@@ -664,19 +965,26 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-label">Data & AI Engineer</div>
+                <div class="hero-label">Senior Engineer &middot; Power Platform & AI</div>
                 <h1>Saibal Ghosh</h1>
-                <div class="subtitle">Power Platform | Microsoft Fabric | Copilot Studio</div>
+                <div class="subtitle">Copilot Studio & Agentic AI | Power Platform | Microsoft Fabric</div>
                 <div class="location">📍 Sydney, Australia</div>
                 <p class="hero-description">
-                    I design and build intelligent data solutions leveraging Microsoft's cutting-edge technologies. Specializing in Azure Data architecture, Microsoft Fabric, Power BI, and Power Platform. Recently focused on building AI-powered applications with Copilot Studio and Azure AI Foundry to help organizations transform their data and automate workflows.
+                    I build AI agents, business apps and data platforms on the Microsoft stack. In financial services I deliver Copilot Studio agents, Power Platform solutions, Snowflake and Fabric data platforms, and Power BI reporting, with Responsible AI, audit trails and human oversight built in from day one.
                 </p>
+                <div class="availability">
+                    <span class="availability-label">Open to</span>
+                    <span class="availability-chip">Full-time</span>
+                    <span class="availability-chip">Contract</span>
+                    <span class="availability-chip">Part-time</span>
+                </div>
                 <div class="hero-cta">
                     <a href="#projects" class="btn btn-primary">View My Work</a>
                     <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    <a href="Saibal_Ghosh_Resume.pdf" class="btn btn-secondary" download>Download Resume</a>
                 </div>
                 <div class="social-links">
-                    <a href="https://github.com/saibalghosh" title="GitHub" target="_blank">⚙️</a>
+                    <a href="https://github.com/sgh0708" title="GitHub" target="_blank">⚙️</a>
                     <a href="https://linkedin.com/in/saibalghosh1209" title="LinkedIn" target="_blank">💼</a>
                     <a href="https://medium.com/@saibal1379met" title="Blog" target="_blank">📝</a>
                 </div>
@@ -694,7 +1002,7 @@
                         I'm a Data Analytics and AI Engineer with deep expertise in the Microsoft data and AI ecosystem. My specialization lies in designing enterprise-scale data solutions using Azure Data technologies, modernizing data platforms with Microsoft Fabric, and building intelligent applications with Copilot Studio and Azure AI Foundry.
                     </p>
                     <p>
-                        Currently based in Sydney, I work with organizations to transform their data infrastructure and unlock AI capabilities. My recent focus has been on building agentic AI applications and Copilot solutions that automate complex business processes and deliver measurable value.
+                        Currently based in Sydney as a Senior Engineer at Westpac, I take solutions from design to production: Copilot Studio agents with multi-step prompt chains, Power Apps and Dataverse platforms for operational resilience, and Power BI observability. I also use AI coding agents such as Amp to speed up delivery, from data-model mapping to documentation.
                     </p>
                     <p>
                         I'm passionate about helping teams architect solutions that are scalable, secure, and data-driven. I believe in continuous learning and staying at the forefront of Microsoft's evolving AI and data technologies.
@@ -709,6 +1017,8 @@
                                 <span class="tech-tag">Azure Synapse</span>
                                 <span class="tech-tag">Azure Data Factory</span>
                                 <span class="tech-tag">Microsoft Fabric</span>
+                                <span class="tech-tag">Snowflake</span>
+                                <span class="tech-tag">dbt</span>
                                 <span class="tech-tag">Power BI</span>
                                 <span class="tech-tag">Dataverse</span>
                             </div>
@@ -722,8 +1032,11 @@
                                 <span class="tech-tag">Azure AI Foundry</span>
                                 <span class="tech-tag">Azure OpenAI</span>
                                 <span class="tech-tag">Agentic AI</span>
+                                <span class="tech-tag">Agent Flows</span>
                                 <span class="tech-tag">Prompt Engineering</span>
                                 <span class="tech-tag">RAG Systems</span>
+                                <span class="tech-tag">LLM Evaluation & Responsible AI</span>
+                                <span class="tech-tag">Amp (AI coding agent)</span>
                             </div>
                         </div>
                     </div>
@@ -735,6 +1048,8 @@
                                 <span class="tech-tag">Power Automate</span>
                                 <span class="tech-tag">Dataflow</span>
                                 <span class="tech-tag">Dataverse</span>
+                                <span class="tech-tag">Model-driven & Canvas Apps</span>
+                                <span class="tech-tag">ALM & Managed Solutions</span>
                             </div>
                         </div>
                     </div>
@@ -802,24 +1117,34 @@
                     <div class="title">Westpac Banking Corporation - Sydney</div>
                     <div class="date">Nov 2023 - Present</div>
                     <p>
-                        Design and implement end-to-end data solutions using Azure Synapse, Microsoft Fabric, and Copilot Studio. Built AI-powered copilots for enterprise clients, reducing manual processes by 60%. Architected data warehouses handling 500TB+ of data, implemented real-time analytics dashboards, mentored teams on data engineering best practices and agentic AI patterns.
+                        Design and deliver Power Platform, AI and data solutions for regulatory, payments and community programs, from solution design through to production support.
                     </p>
+                    <ul class="role-highlights">
+                        <li>Built an AI-assisted application assessment agent in Copilot Studio: multi-stage prompt chain, rule-based weighted scoring, mandatory human review in Power Apps and full audit logging.</li>
+                        <li>Delivered operational resilience apps (business impact assessment, business continuity planning and incident notifications) on Dataverse with Power BI reporting.</li>
+                        <li>Automated payment file creation and validation with Power Automate.</li>
+                        <li>Run ALM across DEV, TST, UAT and PROD with managed solutions, and lead Responsible AI reviews, evaluation and knowledge transfer.</li>
+                        <li>Build AI-assisted engineering tools with Amp, such as automated ERD mapping for Power Platform data models.</li>
+                    </ul>
                 </div>
                 <div class="timeline-item">
                     <h3>Data Analyst Lead</h3>
                     <div class="title">HRS Group (Australian Insurance Sector) - Sydney</div>
                     <div class="date">Aug 2022 - Nov 2023</div>
                     <p>
-                        Led data transformation initiative modernizing reporting and insights infrastructure. Designed Azure Data Lake and Azure Synapse solutions for analytics, created data pipelines processing millions of records daily, developed Power BI dashboards for executive reporting, implemented data governance policies improving data quality from 65% to 95%.
+                        Led a data transformation initiative that modernised reporting and insights. Designed Azure Data Lake and Azure Synapse solutions, built automated data pipelines, developed executive Power BI dashboards and introduced data governance and quality controls.
                     </p>
                 </div>
                 <div class="timeline-item">
-                    <h3>Senior Officer</h3>
-                    <div class="title">Mjunction Services</div>
+                    <h3>Senior Officer, Business Intelligence</h3>
+                    <div class="title">Mjunction Services (B2B e-commerce and procurement)</div>
                     <div class="date">Nov 2016 - July 2021</div>
                     <p>
-                        Developed BI reports and interactive dashboards for stakeholder analysis, designed dimensional data models and fact tables, created ETL processes using Azure Data Factory, optimized query performance improving report load times by 70%.
+                        Built BI reports and interactive dashboards for e-auction, sales and procurement stakeholders. Designed dimensional data models (star schemas and fact tables), developed SQL and Azure Data Factory ETL, automated recurring MIS reports and tuned queries for faster reporting. Worked with business teams to define KPIs and report requirements.
                     </p>
+                </div>
+                <div class="timeline-item timeline-item-minor">
+                    <div class="minor-line">Earlier career &middot; Operations and R&D, metals manufacturing (company confidential) &middot; Mar 2013 - Nov 2016</div>
                 </div>
             </div>
         </div>
@@ -828,14 +1153,126 @@
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
+            <h2 class="section-title">Latest Work</h2>
+            <div class="projects-grid latest-grid">
+                <div class="project-card project-card-latest">
+                    <div class="project-header">
+                        <div class="project-year">Agentic AI &middot; Copilot Studio</div>
+                        <div class="project-icon">🤖</div>
+                        <h3>AI-Assisted Application Assessment Agent</h3>
+                        <p class="project-desc">
+                            A Copilot Studio agent that scores applications against a weighted rubric using a multi-stage prompt chain. Every score comes with evidence, a fixed formula calculates the totals, and an assessor reviews every result in a Power Apps workspace. Includes ingestion flows, audit logging, LLM evaluation against human baselines and a Power BI observability report.
+                        </p>
+                    </div>
+                    <div class="project-footer">
+                        <div class="project-tech">
+                            <span class="tech-badge">Copilot Studio</span>
+                            <span class="tech-badge">Agent Flows</span>
+                            <span class="tech-badge">Power Apps</span>
+                            <span class="tech-badge">SharePoint</span>
+                            <span class="tech-badge">Power BI</span>
+                            <span class="tech-badge">Responsible AI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card project-card-latest">
+                    <div class="project-header">
+                        <div class="project-year">Power Platform &middot; Regulatory</div>
+                        <div class="project-icon">🛡️</div>
+                        <h3>Operational Resilience Platform</h3>
+                        <p class="project-desc">
+                            Model-driven and canvas Power Apps for operational resilience: business impact assessments, business continuity planning and incident notifications. Built on a Dataverse data model with system integrations, analytical dataflows, Power BI dashboards, data migration and multi-environment releases.
+                        </p>
+                    </div>
+                    <div class="project-footer">
+                        <div class="project-tech">
+                            <span class="tech-badge">Power Apps</span>
+                            <span class="tech-badge">Dataverse</span>
+                            <span class="tech-badge">Power Automate</span>
+                            <span class="tech-badge">Dataflows</span>
+                            <span class="tech-badge">Power BI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card project-card-latest">
+                    <div class="project-header">
+                        <div class="project-year">Automation &middot; Payments</div>
+                        <div class="project-icon">💳</div>
+                        <h3>Payment File Automation</h3>
+                        <p class="project-desc">
+                            A Power Platform solution that creates, formats and validates payment files. It replaces manual file preparation with auditable automation.
+                        </p>
+                    </div>
+                    <div class="project-footer">
+                        <div class="project-tech">
+                            <span class="tech-badge">Power Automate</span>
+                            <span class="tech-badge">Power Apps</span>
+                            <span class="tech-badge">Dataverse</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card project-card-latest">
+                    <div class="project-header">
+                        <div class="project-year">AI-assisted engineering</div>
+                        <div class="project-icon">🧭</div>
+                        <h3>ERD Mapper and AI Engineering Toolkit</h3>
+                        <p class="project-desc">
+                            Developer tools built with the Amp coding agent. The ERD Mapper is a Python web app that turns Power Platform solution exports into entity-relationship diagrams. The toolkit also includes helpers for requirements (BRD) analysis, document review and migrations.
+                        </p>
+                    </div>
+                    <div class="project-footer">
+                        <div class="project-tech">
+                            <span class="tech-badge">Amp</span>
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Flask</span>
+                            <span class="tech-badge">Agentic AI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card project-card-latest project-card-wide">
+                    <div class="project-header">
+                        <div class="project-year">Data engineering &middot; Snowflake</div>
+                        <div class="project-icon">❄️</div>
+                        <h3>Snowflake Analytics Platform for Sales and Operations</h3>
+                        <p class="project-desc">
+                            An ELT platform on Snowflake that brings ERP, CRM and file-based data into one governed warehouse for reporting. Azure Data Factory lands source extracts in Azure Data Lake, Snowpipe loads them into a RAW layer, and dbt models clean and conform the data into STAGING and a star-schema MARTS layer. Streams and Tasks handle incremental (CDC) loads, role-based access and masking policies protect sensitive columns, and Power BI semantic models serve the dashboards.
+                        </p>
+                        <div class="arch" aria-label="Snowflake platform architecture">
+                            <div class="arch-step"><span class="arch-label">Sources</span><span>ERP, CRM, CSV, APIs</span></div>
+                            <div class="arch-arrow">&rarr;</div>
+                            <div class="arch-step"><span class="arch-label">Ingest</span><span>Azure Data Factory &rarr; ADLS stage</span></div>
+                            <div class="arch-arrow">&rarr;</div>
+                            <div class="arch-step arch-step-core"><span class="arch-label">Snowflake</span><span>Snowpipe &rarr; RAW &rarr; STAGING &rarr; MARTS</span><span class="arch-sub">dbt models &middot; Streams &amp; Tasks</span></div>
+                            <div class="arch-arrow">&rarr;</div>
+                            <div class="arch-step"><span class="arch-label">Consume</span><span>Power BI semantic models</span></div>
+                        </div>
+                        <div class="arch-gov">Governance: RBAC roles &middot; dynamic data masking &middot; Time Travel &middot; resource monitors for cost control</div>
+                    </div>
+                    <div class="project-footer">
+                        <div class="project-tech">
+                            <span class="tech-badge">Snowflake</span>
+                            <span class="tech-badge">Snowpipe</span>
+                            <span class="tech-badge">dbt</span>
+                            <span class="tech-badge">Azure Data Factory</span>
+                            <span class="tech-badge">ADLS Gen2</span>
+                            <span class="tech-badge">Power BI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title" style="margin-top: 90px;">More Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-header">
                         <div class="project-icon">🤖</div>
                         <h3>Intelligent Customer Support Copilot</h3>
                         <p class="project-desc">
-                            Built an AI-powered copilot using Copilot Studio and Azure OpenAI that handles customer inquiries across multiple channels. Integrated with Azure Data for real-time context and historical data. Reduced support ticket resolution time by 50% and improved CSAT scores by 35%.
+                            Built an AI-powered copilot using Copilot Studio and Azure OpenAI that handles customer inquiries across multiple channels. Integrated with Azure Data for real-time context and historical data. Designed to shorten resolution times and improve customer experience.
                         </p>
                     </div>
                     <div class="project-footer">
@@ -856,7 +1293,7 @@
                         <div class="project-icon">📊</div>
                         <h3>Enterprise Data Warehouse Migration to Fabric</h3>
                         <p class="project-desc">
-                            Migrated legacy data warehouse to Microsoft Fabric, consolidating data from 15+ enterprise sources. Implemented lakehouse architecture with Spark, created real-time semantic models, built interactive dashboards. Reduced infrastructure costs by 40% and improved query performance by 5x.
+                            Migrated a legacy data warehouse to Microsoft Fabric, consolidating multiple enterprise sources. Implemented a lakehouse architecture with Spark, built semantic models and interactive dashboards, and simplified the platform for lower running costs and faster queries.
                         </p>
                     </div>
                     <div class="project-footer">
@@ -877,7 +1314,7 @@
                         <div class="project-icon">⚡</div>
                         <h3>Real-Time Analytics Pipeline</h3>
                         <p class="project-desc">
-                            Designed and implemented real-time data pipeline processing 100K+ events per second using Azure Event Hubs, Stream Analytics, and Azure Synapse. Built interactive dashboards for real-time business monitoring, enabling data-driven decision making across the organization.
+                            Designed and implemented a real-time data pipeline using Azure Event Hubs, Stream Analytics and Azure Synapse. Built interactive dashboards for real-time business monitoring, enabling data-driven decision making across the organization.
                         </p>
                     </div>
                     <div class="project-footer">
@@ -898,7 +1335,7 @@
                         <div class="project-icon">🧠</div>
                         <h3>AI-Powered Business Process Automation</h3>
                         <p class="project-desc">
-                            Created end-to-end automation solution using Power Automate and Azure AI services. Implemented intelligent document classification, data extraction, and routing using Form Recognizer and Custom Vision. Automated 200+ daily processes, saving 15+ hours/week and reducing errors by 95%.
+                            Created end-to-end automation solution using Power Automate and Azure AI services. Implemented intelligent document classification, data extraction, and routing using Form Recognizer and Custom Vision. Removed repetitive manual handling and reduced errors.
                         </p>
                     </div>
                     <div class="project-footer">
@@ -919,7 +1356,7 @@
                         <div class="project-icon">📈</div>
                         <h3>Executive Analytics & KPI Dashboard</h3>
                         <p class="project-desc">
-                            Developed comprehensive Power BI dashboards providing real-time KPI monitoring across business units. Implemented role-based access control, paginated reports, and mobile-optimized views. Enabled executives to make data-driven decisions 40% faster with self-service analytics.
+                            Developed comprehensive Power BI dashboards providing real-time KPI monitoring across business units. Implemented role-based access control, paginated reports, and mobile-optimized views. Gave executives self-service analytics for faster, data-driven decisions.
                         </p>
                     </div>
                     <div class="project-footer">
@@ -940,7 +1377,7 @@
                         <div class="project-icon">🔐</div>
                         <h3>Data Governance & Quality Framework</h3>
                         <p class="project-desc">
-                            Implemented enterprise data governance framework using Azure Purview and Microsoft Fabric governance. Established data quality rules, automated lineage tracking, and compliance reporting. Improved data quality scores from 65% to 95% across the organization.
+                            Implemented enterprise data governance framework using Azure Purview and Microsoft Fabric governance. Established data quality rules, automated lineage tracking, and compliance reporting. Improved data quality and trust across the organisation.
                         </p>
                     </div>
                     <div class="project-footer">
@@ -962,11 +1399,51 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2>Let's Build Intelligent Data Solutions Together</h2>
-            <p>Based in Sydney and always interested in discussing innovative data projects, AI applications, and digital transformations. Reach out if you'd like to collaborate on your next data initiative.</p>
-            <div class="contact-cta">
-                <a href="mailto:your.email@example.com" class="btn btn-primary">Send Me an Email</a>
-                <a href="https://linkedin.com/in/saibalghosh1209" class="btn btn-secondary" target="_blank">Connect on LinkedIn</a>
+            <h2>Let's Work Together</h2>
+            <p>I'm open to full-time, contract and part-time roles in Power Platform, Copilot Studio and data engineering. Send me a message and I'll get back to you.</p>
+
+            <div class="contact-layout">
+                <form id="contact-form" class="contact-form" novalidate>
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="cf-name">Name</label>
+                            <input id="cf-name" name="name" type="text" autocomplete="name" required maxlength="100">
+                        </div>
+                        <div class="form-field">
+                            <label for="cf-email">Email</label>
+                            <input id="cf-email" name="email" type="email" autocomplete="email" required maxlength="150">
+                        </div>
+                    </div>
+
+                    <fieldset class="form-field">
+                        <legend>Opportunity type</legend>
+                        <div class="role-options">
+                            <label class="role-option"><input type="radio" name="opportunity" value="Full-time" required><span>Full-time</span></label>
+                            <label class="role-option"><input type="radio" name="opportunity" value="Contract"><span>Contract</span></label>
+                            <label class="role-option"><input type="radio" name="opportunity" value="Part-time"><span>Part-time</span></label>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-field">
+                        <label for="cf-message">Message</label>
+                        <textarea id="cf-message" name="message" rows="6" required maxlength="3000" placeholder="Tell me about the role, team and timing."></textarea>
+                    </div>
+
+                    <!-- Spam trap: real visitors never see or fill this field -->
+                    <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+                    <button type="submit" class="btn btn-primary form-submit">Send Message</button>
+                    <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+                </form>
+
+                <aside class="contact-side">
+                    <h3>Other ways to connect</h3>
+                    <a href="https://linkedin.com/in/saibalghosh1209" target="_blank" class="contact-link">💼 LinkedIn</a>
+                    <a href="https://github.com/sgh0708" target="_blank" class="contact-link">⚙️ GitHub</a>
+                    <a href="https://medium.com/@saibal1379met" target="_blank" class="contact-link">📝 Medium</a>
+                    <a href="Saibal_Ghosh_Resume.pdf" download class="btn btn-secondary contact-resume">&#8681; Download Resume (PDF)</a>
+                    <p class="contact-note">📍 Sydney, Australia</p>
+                </aside>
             </div>
         </div>
     </section>
@@ -974,7 +1451,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Saibal Ghosh. Transforming data into intelligence with Microsoft technologies. Based in Sydney, Australia.</p>
+            <p>&copy; 2026 Saibal Ghosh. Transforming data into intelligence with Microsoft technologies. Based in Sydney, Australia.</p>
         </div>
     </footer>
 
@@ -1002,11 +1479,57 @@
             });
         }
 
-        // Resume download
-        function downloadResume() {
-            alert('Resume download functionality would be implemented here. Replace with your actual resume file URL.');
-            // window.location.href = 'resume.pdf';
-        }
+        // Contact form: FormSubmit emails each submission to the inbox below.
+        // The first submission triggers a one-time activation email from FormSubmit.
+        const CONTACT_ENDPOINT = 'https://formsubmit.co/ajax/saibal1379met@gmail.com';
+
+        document.getElementById('contact-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const form = e.target;
+            const status = document.getElementById('form-status');
+            const button = form.querySelector('.form-submit');
+            status.className = 'form-status';
+
+            if (!form.checkValidity()) {
+                status.textContent = 'Please enter your name, a valid email, an opportunity type and a message.';
+                status.classList.add('error');
+                return;
+            }
+            if (form._honey.value) return;
+
+            const data = new FormData(form);
+            const payload = {
+                name: data.get('name'),
+                email: data.get('email'),
+                opportunity: data.get('opportunity'),
+                message: data.get('message'),
+                _subject: `Portfolio enquiry (${data.get('opportunity')}) from ${data.get('name')}`,
+                _replyto: data.get('email'),
+                _template: 'table',
+                _captcha: 'false'
+            };
+
+            button.disabled = true;
+            button.textContent = 'Sending...';
+            try {
+                const res = await fetch(CONTACT_ENDPOINT, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const result = await res.json().catch(() => ({}));
+                if (!res.ok || String(result.success) !== 'true') throw new Error(result.message || 'Send failed');
+                form.reset();
+                status.textContent = 'Thanks! Your message has been sent. I will reply soon.';
+                status.classList.add('success');
+            } catch (err) {
+                status.textContent = 'Sorry, the message could not be sent. Please try again or reach me on LinkedIn.';
+                status.classList.add('error');
+            } finally {
+                button.disabled = false;
+                button.textContent = 'Send Message';
+            }
+        });
 
         // Smooth scroll behavior
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
